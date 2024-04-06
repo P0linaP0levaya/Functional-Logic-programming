@@ -61,3 +61,12 @@ mother(X,Y):- woman(X), parent(X,Y).
 /*Predicate mother(+X: atom)
 Построить предикат, mother(X), который выводит маму X.*/
 mother(X):- mother(Y,X), print(Y), nl.
+
+/*Predicate brother(?X: atom, +Y: atom)
+Построить предикат brother(X, Y), который проверяет, является ли X братом Y.*/
+brother(X,Y):- parent(Z,X), parent(Z,Y), man(X).
+
+/*Predicate brothers(+X: atom)
+Построить предикат brothers(X), который выводит всех братьев X.*/
+brothers(X):- brother(X,Y),X\==Y, print(Y),nl,fail.
+
