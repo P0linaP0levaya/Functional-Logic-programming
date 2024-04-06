@@ -52,12 +52,12 @@ men():- man(X), print(X), nl, fail.
 women():- woman(X), print(X), nl, fail.
 children(X):- parent(X,Y), print(Y), nl, fail.
 
-% Predicate mother(?X: atom, +Y: atom)
-% Построить предикат mother(X, Y), который проверяет, является ли X матерью Y, если X и Y унифицированы
-% если X не унифицирована, выводит мать Y
-% если Y не унифицирована, выводит ребенка X
+/*Predicate mother(?X: atom, +Y: atom)
+Построить предикат mother(X, Y), который проверяет, является ли X матерью Y, если X и Y унифицированы
+если X не унифицирована, выводит мать Y
+если Y не унифицирована, выводит ребенка X*/
 mother(X,Y):- woman(X), parent(X,Y).
 
-% Predicate mother(+X: atom)
-% Построить предикат, mother(X), который выводит маму X.
+/*Predicate mother(+X: atom)
+Построить предикат, mother(X), который выводит маму X.*/
 mother(X):- mother(Y,X), print(Y), nl.
