@@ -64,7 +64,7 @@ mother(X):- mother(Y,X), print(Y), nl.
 
 /*Predicate brother(?X: atom, +Y: atom)
 Построить предикат brother(X, Y), который проверяет, является ли X братом Y.*/
-brother(X,Y):- parent(Z,X), parent(Z,Y), man(X).
+brother(X,Y):- parent(Z,X), parent(Z,Y), man(X), man(Z).
 
 /*Predicate brothers(+X: atom)
 Построить предикат brothers(X), который выводит всех братьев X.*/
